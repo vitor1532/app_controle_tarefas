@@ -52,7 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'], // quando o validator de confirmed é passado, ele compara o campo validado com um outro campo de nome igual + _confirmation (<name>_confirmation), ficando nesse caso como: password_confirmation
         ]);
     }
 
