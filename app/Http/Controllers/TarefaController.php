@@ -23,7 +23,24 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        //
+
+        $id = auth()->user()->id;
+        $nome = auth()->user()->name;
+        $email = auth()->user()->email;
+
+        echo "ID: $id | Nome: $nome | E-mail: $email";
+        /*if(auth()->check()) {
+            $id = auth()->user()->id;
+            $nome = auth()->user()->name;
+            $email = auth()->user()->email;
+
+            echo "ID: $id | Nome: $nome | E-mail: $email";
+
+        } else {
+
+            echo "Usuário não autenticado";
+
+        }*/
     }
 
     /**
