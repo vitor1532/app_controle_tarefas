@@ -57,7 +57,7 @@ class RedefinirSenhaNotification extends Notification
             ->action('Redefina sua Senha', $url)
             ->line(Lang::get('Este link de irá expirar em :count minutos.', ['count' => $minutos]))
             ->line(Lang::get('Se você não requisitou a troca de senha, não é necessária nenhuma ação.'))
-            ->salutation('Até breve,');
+            ->salutation('Até breve');
     }
 
     /**
