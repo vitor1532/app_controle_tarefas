@@ -68,7 +68,7 @@ class VerificarEmailNotification extends Notification
     protected function buildMailMessage($url)
     {
         return (new MailMessage)
-            ->subject('Verifique seu endereço de e-mail')
+            ->subject('Confirmação de e-mail')
             ->greeting('Olá, '.$this->name)
             ->line('Por favor, clique no botão abaixo para verificar seu e-mail')
             ->action('Verifique seu e-mail', $url)
