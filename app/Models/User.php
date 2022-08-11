@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Tarefa;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -51,4 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new VerificarEmailNotification($this->name));
     }
+
+    public function tarefa() {
+        $this->hasMany(Tarefa::class);
+    }
+
 }
