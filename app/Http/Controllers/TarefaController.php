@@ -95,7 +95,12 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefa)
     {
-        //
+        $user_id = auth()->user()->id;
+        if($tarefa->user_id == $user_id){
+            return view('tarefa.edit', ['tarefa' => $tarefa]);
+        }else {
+            return view('acesso-negado');
+        }
     }
 
     /**
@@ -107,7 +112,26 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-        //
+        //regras de validação
+        $regras = [
+            'tarefa' => 'required',
+            'data_limite_conclusao' => 'required'
+        ];
+
+        $feedback = [
+            'required' => 'Este campo é obrigatório'
+        ];
+
+        $request->validate($regras, $feedback);
+
+        $tarefa->update($request->all());
+
+        $user_id = auth()->user()->id;
+        if($tarefa->user_id == $user_id){
+            return redirect()->route('tarefa.show', ['tarefa' => $tarefa->id]);
+        }else {
+            return view('acesso-negado');
+        }
     }
 
     /**
