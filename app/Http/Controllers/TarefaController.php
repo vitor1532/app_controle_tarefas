@@ -124,10 +124,9 @@ class TarefaController extends Controller
 
         $request->validate($regras, $feedback);
 
-        $tarefa->update($request->all());
-
         $user_id = auth()->user()->id;
         if($tarefa->user_id == $user_id){
+            $tarefa->update($request->all());
             return redirect()->route('tarefa.show', ['tarefa' => $tarefa->id]);
         }else {
             return view('acesso-negado');
