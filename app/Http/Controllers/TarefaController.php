@@ -73,7 +73,7 @@ class TarefaController extends Controller
         $user = auth()->user();
         Mail::to($destinatario)->send(new NovaTarefaMail($tarefa, $user));
 
-        return redirect()->route('tarefa.show', ['tarefa' => $tarefa->id]);
+        return route('tarefa.show', ['tarefa' => $tarefa->id]);
     }
 
     /**
@@ -141,6 +141,12 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-        //
+        $user_id = auth()->user()->id;
+        if($tarefa->user_id == $user_id){
+            /*$msg = $tarefa->tarefa . ' deletada com sucesso.';*/
+            return redirect()->route('tarefa.index');
+        }else {
+            return view('acesso-negado');
+        }
     }
 }
