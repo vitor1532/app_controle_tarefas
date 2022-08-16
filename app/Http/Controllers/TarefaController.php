@@ -6,6 +6,9 @@ use App\Mail\NovaTarefaMail;
 use App\Models\Tarefa;
 use Mail;
 use Illuminate\Http\Request;
+use App\Exports\TarefasExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class TarefaController extends Controller
 {
@@ -154,5 +157,9 @@ class TarefaController extends Controller
         }else {
             return view('acesso-negado');
         }
+    }
+
+    public function export() {
+        return Excel::download(new TarefasExport, 'tarefas.xlsx');
     }
 }

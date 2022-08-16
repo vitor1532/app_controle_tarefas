@@ -13,6 +13,8 @@ use App\Mail\MensagemTesteMail;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('tarefa/export', 'App\Http\Controllers\TarefaController@export')
+    ->name('tarefa.export');
 
 Route::get('/', function () {
     return view('bem-vindo');
