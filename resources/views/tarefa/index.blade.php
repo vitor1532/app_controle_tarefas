@@ -29,7 +29,7 @@
                                         <th scope="row">{{ $tarefa->id }}</th>
                                         <td>{{ $tarefa->tarefa }}</td>
                                         <td>{{ date('d/m/Y', strtotime($tarefa->data_limite_conclusao)) }}</td>
-                                        <td><a href="{{ route('tarefa.edit', $tarefa->id) }}">Editar</a></td>
+                                        <td><a href="{{ route('tarefa.edit', $tarefa->id) }}" class="btn btn-sm btn-outline-primary">Editar</a></td>
                                         <td>
                                             <form id="form_{{$tarefa->id}}" method="POST" action="{{route('tarefa.destroy', ['tarefa' => $tarefa->id])}}" >
                                                 @method('DELETE')
