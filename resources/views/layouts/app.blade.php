@@ -58,7 +58,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('tarefa.create') }}" class="dropdown-item">Tarefas</a>
+                                    <a href="{{ route('tarefa.index') }}" class="dropdown-item">Tarefas</a>
+                                    <a href="{{ route('tarefa.create') }}" class="dropdown-item">Nova Tarefa</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -27,6 +27,10 @@ class TarefaController extends Controller
      */
     public function index()
     {
+
+        if(isset($msg)) {
+            dd($msg);
+        }
         $tarefas = Tarefa::where('user_id', '=', auth()->user()->id)->paginate(10);
 
         //dd($tarefas);
@@ -73,7 +77,7 @@ class TarefaController extends Controller
         $user = auth()->user();
         Mail::to($destinatario)->send(new NovaTarefaMail($tarefa, $user));
 
-        return route('tarefa.show', ['tarefa' => $tarefa->id]);
+        return redirect()->route('tarefa.show', ['tarefa' => $tarefa->id]);
     }
 
     /**
@@ -141,10 +145,12 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
+        //dd($tarefa);
         $user_id = auth()->user()->id;
         if($tarefa->user_id == $user_id){
-            /*$msg = $tarefa->tarefa . ' deletada com sucesso.';*/
-            return redirect()->route('tarefa.index');
+            $msg = 'Tarefa "'.$tarefa->tarefa.'" deletada com sucesso.';
+            $tarefa->delete();
+            return redirect()->route('tarefa.index', compact('msg'));
         }else {
             return view('acesso-negado');
         }

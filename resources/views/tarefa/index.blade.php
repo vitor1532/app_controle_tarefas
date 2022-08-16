@@ -4,7 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                {{ $msg ?? '' }}
+                @isset($_GET['msg'])
+                    <div class="text-danger text-center">{{$_GET['msg']}}</div>
+                @endisset
                 <div class="card">
                     <div class="card-header">Tarefas</div>
                     <div class="card-body">
@@ -26,11 +28,12 @@
                                         <td>{{ date('d/m/Y', strtotime($tarefa->data_limite_conclusao)) }}</td>
                                         <td><a href="{{ route('tarefa.edit', $tarefa->id) }}">Editar</a></td>
                                         <td>
-                                            <form id="form_{{ $tarefa->id }}" action="{{ route('tarefa.destroy', ['tarefa' => $tarefa->id]) }}" method="post">
+                                            <form id="form_{{$tarefa->id}}" method="POST" action="{{route('tarefa.destroy', ['tarefa' => $tarefa->id])}}" >
                                                 @method('DELETE')
                                                 @csrf
-                                                <a href="#" onclick="document.getElementById('form_{{ $tarefa->id }}').submit()">Excluir</a>
+                                                <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                                             </form>
+                                            {{--<a href="" onclick="document.getElementById('form_{{$tarefa->id}}').submit()">Excluir</a>--}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -49,7 +52,7 @@
                                 <li class="page-item"><a class="page-link" href="{{ $tarefas->nextPageUrl() }}">Avançar</a></li>
                             </ul>
 
-                            Exibindo {{ $tarefas->count() }} itens de {{ $tarefas->total() }}
+                            Exibindo {{ $tarefas->count() }} de {{ $tarefas->total() }}
 
                         </nav>
                     </div>
