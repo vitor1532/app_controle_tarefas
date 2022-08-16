@@ -8,7 +8,10 @@
                     <div class="text-danger text-center">{{$_GET['msg']}}</div>
                 @endisset
                 <div class="card">
-                    <div class="card-header">Tarefas</div>
+                    <div class="card-header" style="display: inline-flex">
+                        <div class="mr-auto">Tarefas</div>
+                        <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-info">Nova Tarefa</a>
+                    </div>
                     <div class="card-body">
                         <table class="table table-striped">
                             <thead>
