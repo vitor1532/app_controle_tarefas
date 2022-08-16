@@ -5,8 +5,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Adicionar Tarefa</div>
-
+                    <div class="card-header" style="display: inline-flex">
+                        <div class="mr-auto">Adicionar Tarefa</div>
+                        <a href="{{ url()->previous() }}" class="btn btn-sm btn-primary">Voltar</a>
+                    </div>
+                    {{--<div class="card-header" style="display: inline-flex">
+                        <div class="mr-auto">Tarefas</div>
+                        <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-info">Nova Tarefa</a>
+                    </div>--}}
                     <div class="card-body">
                         <form method="post" action="{{ route('tarefa.store') }}">
                             @csrf

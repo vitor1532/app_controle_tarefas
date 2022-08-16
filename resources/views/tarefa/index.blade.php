@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header" style="display: inline-flex">
                         <div class="mr-auto">Tarefas</div>
-                        <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-info">Nova Tarefa</a>
+                        <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-primary">Nova Tarefa</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
