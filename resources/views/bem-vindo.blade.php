@@ -13,7 +13,7 @@
 
     @guest
 
-        Olá visitante, tudo bem ?
+        <h1>Olá visitante, tudo bem ?</h1>
 
     @endguest
 @endsection

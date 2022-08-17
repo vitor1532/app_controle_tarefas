@@ -11,7 +11,10 @@
                     <div class="card-header" style="display: inline-flex">
                         <div class="mr-auto">Tarefas</div>
                         <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-primary">Nova Tarefa</a>
-                        <a href="{{ route('tarefa.export') }}" class="btn btn-sm btn-outline-success ml-2">XLSX</a>
+                        <a href="{{ route('tarefa.export', ['extension' => 'xlsx']) }}" class="btn btn-sm btn-outline-success ml-2">XLSX</a>
+                        <a href="{{ route('tarefa.export', ['extension' => 'csv']) }}" class="btn btn-sm btn-outline-success ml-2">CSV</a>
+                        <a href="{{ route('tarefa.export', ['extension' => 'pdf']) }}" class="btn btn-sm btn-outline-success ml-2">PDF</a>
+
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
