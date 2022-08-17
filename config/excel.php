@@ -127,6 +127,7 @@ return [
             'escape_character' => '\\',
             'contiguous'       => false,
             'input_encoding'   => 'UTF-8',
+            //'use_bom'          => true,
         ],
 
         /*
