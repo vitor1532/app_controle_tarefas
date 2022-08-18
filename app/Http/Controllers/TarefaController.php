@@ -179,7 +179,15 @@ class TarefaController extends Controller
         //$tarefas = Tarefa::where('user_id', '=', $user_id)->get();;
         //dd($tarefas);
         $pdf = PDF::loadView('tarefa.pdf', ['tarefas' => $tarefas]);
-        return $pdf->download('tarefa.pdf');
+
+        $pdf->setPaper('a4', 'portrait');
+        /*
+         * setPaper() espera dois parametros:
+         * o primeiro é o tipo de papel (a4, a5, letter, etc)
+         * o segundo é a orientação da impressão (landscape, portrait)
+         * */
+
+        return $pdf->stream('tarefa.pdf');
     }
 
 }
