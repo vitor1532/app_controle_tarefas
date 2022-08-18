@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Mail\NovaTarefaMail;
 use App\Models\Tarefa;
-use Mail;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Exports\TarefasExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 
 class TarefaController extends Controller
@@ -169,6 +172,12 @@ class TarefaController extends Controller
         } else {
             return redirect()->route('tarefa.index');
         }
+    }
+
+    public function exportDOM() {
+        $data = [];
+        $pdf = PDF::loadView('tarefa.pdf', $data);
+        return $pdf->download('tarefa.pdf');
     }
 
 }

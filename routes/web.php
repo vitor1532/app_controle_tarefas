@@ -15,6 +15,8 @@ use App\Mail\MensagemTesteMail;
 */
 Route::get('tarefa/export/{extension}', 'App\Http\Controllers\TarefaController@export')
     ->name('tarefa.export');
+Route::get('tarefa/exportDOM', 'App\Http\Controllers\TarefaController@exportDOM')
+    ->name('tarefa.exportDOM');
 
 //tarefa.exportCSV
 Route::get('/', function () {

@@ -14,6 +14,7 @@
                         <a href="{{ route('tarefa.export', ['extension' => 'xlsx']) }}" class="btn btn-sm btn-outline-success ml-2">XLSX</a>
                         <a href="{{ route('tarefa.export', ['extension' => 'csv']) }}" class="btn btn-sm btn-outline-success ml-2">CSV</a>
                         <a href="{{ route('tarefa.export', ['extension' => 'pdf']) }}" class="btn btn-sm btn-outline-success ml-2">PDF</a>
+                        <a href="{{ route('tarefa.exportDOM') }}" class="btn btn-sm btn-outline-success ml-2">DOMPDF</a>
 
                     </div>
                     <div class="card-body">
