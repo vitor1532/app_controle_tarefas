@@ -17,7 +17,7 @@ class Tarefa extends Model
     ];
 
     public function user() {
-        $this->belongsTo(Tarefa::class);
+        return $this->belongsTo(Tarefa::class);
     }
 
 }
