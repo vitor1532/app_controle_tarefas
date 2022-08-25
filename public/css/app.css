@@ -9277,3 +9277,13 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+.imagem {
+    margin-right: auto;
+    width: 80%;
+    border-radius: 50px;
+}
+
+.border {
+    border: 1px solid black;
+}
