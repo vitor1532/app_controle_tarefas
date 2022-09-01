@@ -50,7 +50,5 @@
             </div>
         </div>
 
-
-
     @endguest
 @endsection

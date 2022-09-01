@@ -166,7 +166,7 @@ class TarefaController extends Controller
 
         $fileName = 'tarefas.';
 
-        if(in_array($extension, ['xlsx', 'csv', 'pdf'])) {
+        if(in_array($extension, ['xlsx', 'csv'])) {
             $fileName .= $extension;
             return Excel::download(new TarefasExport, $fileName);
         } else {

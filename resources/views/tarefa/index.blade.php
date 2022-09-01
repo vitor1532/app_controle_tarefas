@@ -13,8 +13,7 @@
                         <a href="{{ route('tarefa.create') }}" class="btn btn-sm btn-primary">Nova Tarefa</a>
                         <a href="{{ route('tarefa.export', ['extension' => 'xlsx']) }}" class="btn btn-sm btn-outline-success ml-2">XLSX</a>
                         <a href="{{ route('tarefa.export', ['extension' => 'csv']) }}" class="btn btn-sm btn-outline-success ml-2">CSV</a>
-                        <a href="{{ route('tarefa.export', ['extension' => 'pdf']) }}" class="btn btn-sm btn-outline-success ml-2">PDF</a>
-                        <a href="{{ route('tarefa.exportDOM') }}" class="btn btn-sm btn-outline-success ml-2" target="_blank">DOMPDF</a>
+                        <a href="{{ route('tarefa.exportDOM') }}" class="btn btn-sm btn-outline-success ml-2" target="_blank">PDF</a> <!-- DOMPDF -->
 
                     </div>
                     <div class="card-body">
