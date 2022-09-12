@@ -14,7 +14,7 @@
                                 <input type="date" class="form-control" value="{{ $tarefa->data_limite_conclusao }}">
                             </div>
                         </fieldset>
-                        <a href="{{ url()->previous()/*route('tarefa.create')*/ }}" class="btn btn-primary">Voltar</a>
+                        <a href="{{ /*url()->previous()*/route('tarefa.index') }}" class="btn btn-primary">Voltar</a>
                     </div>
                 </div>
             </div>
