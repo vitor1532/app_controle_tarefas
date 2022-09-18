@@ -20,4 +20,8 @@ class Tarefa extends Model
         return $this->belongsTo(Tarefa::class);
     }
 
+    public static function teste() {
+        return 'oi';
+}
+
 }

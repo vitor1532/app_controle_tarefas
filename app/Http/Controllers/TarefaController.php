@@ -41,7 +41,7 @@ class TarefaController extends Controller
 
         //dd($tarefas);
 
-        return view('tarefa.index', ['tarefas' => $tarefas]);
+        return view('tarefa.index3', ['tarefas' => $tarefas]);
     }
 
     /**
